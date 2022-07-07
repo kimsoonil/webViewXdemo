@@ -1,23 +1,24 @@
 import 'package:flutter/material.dart';
-
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'webview_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'WebViewX Example App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      title: 'CLOZUP',
       debugShowCheckedModeBanner: false,
-      home: const WebViewXPage(),
+      home: AnimatedSplashScreen(
+        splash: Image.asset('assets/Image/BI_Text_Symbol_W.png'),
+        splashIconSize: 180,
+        nextScreen: const WebViewXPage(),
+        splashTransition: SplashTransition.fadeTransition,
+        backgroundColor: Colors.black,
+      ),
     );
   }
 }
